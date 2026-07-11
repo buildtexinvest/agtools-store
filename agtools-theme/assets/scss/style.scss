@@ -1,0 +1,10 @@
+@use 'tokens';
+
+// Source SCSS. Compile this entrypoint to ../css/theme.css for deployment.
+// Components are intentionally kept modular as the storefront expands.
+@use 'base/reset';
+@use 'components/buttons';
+@use 'components/cards';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'pages/home';
