@@ -10,4 +10,11 @@
 		this.setAttribute( 'aria-expanded', String( ! open ) );
 		nav.classList.toggle( 'is-open', ! open );
 	} );
+
+	const brandTrack = document.querySelector( '[data-brand-track]' );
+	document.querySelectorAll( '[data-brand-scroll]' ).forEach( function ( button ) {
+		button.addEventListener( 'click', function () {
+			if ( brandTrack ) brandTrack.scrollBy( { left: Number( this.dataset.brandScroll ) * 240, behavior: 'smooth' } );
+		} );
+	} );
 }() );

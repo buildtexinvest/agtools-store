@@ -36,10 +36,17 @@
 		<nav class="primary-nav" aria-label="<?php esc_attr_e( 'Primary navigation', 'agtools' ); ?>">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container' => false, 'fallback_cb' => 'wp_page_menu' ) ); ?>
 		</nav>
+		<form class="header-search" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<label class="screen-reader-text" for="agtools-search"><?php esc_html_e( 'Search products', 'agtools' ); ?></label>
+			<input id="agtools-search" type="search" name="s" placeholder="<?php esc_attr_e( 'Search products', 'agtools' ); ?>">
+			<?php if ( function_exists( 'WC' ) ) : ?><input type="hidden" name="post_type" value="product"><?php endif; ?>
+			<button type="submit" aria-label="<?php esc_attr_e( 'Search', 'agtools' ); ?>">⌕</button>
+		</form>
 		<div class="site-header__actions">
 			<?php if ( function_exists( 'wc_get_page_permalink' ) ) : ?>
-				<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" aria-label="<?php esc_attr_e( 'My account', 'agtools' ); ?>">⌾</a>
-				<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart" aria-label="<?php esc_attr_e( 'View cart', 'agtools' ); ?>">Cart <span><?php echo esc_html( WC()->cart ? WC()->cart->get_cart_contents_count() : 0 ); ?></span></a>
+				<a class="header-action" href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" aria-label="<?php esc_attr_e( 'My account', 'agtools' ); ?>"><span aria-hidden="true">◯</span><b><?php esc_html_e( 'Account', 'agtools' ); ?></b></a>
+				<a class="header-action" href="#wishlist" aria-label="<?php esc_attr_e( 'Wishlist', 'agtools' ); ?>"><span aria-hidden="true">♡</span><b><?php esc_html_e( 'Wishlist', 'agtools' ); ?></b></a>
+				<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart" aria-label="<?php esc_attr_e( 'View cart', 'agtools' ); ?>"><span aria-hidden="true">▱</span><b><?php esc_html_e( 'Cart', 'agtools' ); ?></b><i><?php echo esc_html( WC()->cart ? WC()->cart->get_cart_contents_count() : 0 ); ?></i></a>
 			<?php endif; ?>
 		</div>
 	</div>

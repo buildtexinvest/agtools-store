@@ -1,4 +1,4 @@
 <?php
 /** Brand strip. */
 ?>
-<section class="section brands"><div class="container"><p class="eyebrow"><?php esc_html_e( 'Trusted brands', 'agtools' ); ?></p><div class="brands__list"><span>DEWALT</span><span>MAKITA</span><span>MILWAUKEE</span><span>BOSCH</span><span>FESTOOL</span></div></div></section>
+<section class="section brands"><div class="container"><div class="section-heading"><div><p class="eyebrow"><?php esc_html_e( 'Trusted quality', 'agtools' ); ?></p><h2><?php esc_html_e( 'Brands professionals choose', 'agtools' ); ?></h2></div><div class="brand-controls"><button type="button" data-brand-scroll="-1" aria-label="<?php esc_attr_e( 'Previous brands', 'agtools' ); ?>">←</button><button type="button" data-brand-scroll="1" aria-label="<?php esc_attr_e( 'Next brands', 'agtools' ); ?>">→</button></div></div><div class="brands__list" data-brand-track role="list"><span role="listitem">DISTAR</span><span role="listitem">BIHUI</span><span role="listitem">Mechanic</span><span role="listitem">SIGMA</span><span role="listitem">MONTOLIT</span><span role="listitem">RUBI</span></div></div></section>

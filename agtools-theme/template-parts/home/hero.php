@@ -1,14 +1,14 @@
 <?php
 /** Hero section. */
 ?>
-<section class="hero">
+<section class="hero hero--premium">
 	<div class="container hero__grid">
 		<div class="hero__content">
-			<p class="eyebrow"><?php esc_html_e( 'Tools for professionals', 'agtools' ); ?></p>
-			<h1><?php esc_html_e( 'Built for the job. Ready for anything.', 'agtools' ); ?></h1>
-			<p class="hero__lead"><?php esc_html_e( 'Reliable tools, workwear and equipment for people who expect more from every shift.', 'agtools' ); ?></p>
-			<div class="button-group"><a class="button" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' ) ); ?>"><?php esc_html_e( 'Shop tools', 'agtools' ); ?> <span>→</span></a><a class="text-link" href="#categories"><?php esc_html_e( 'Explore categories', 'agtools' ); ?></a></div>
+			<p class="eyebrow"><?php esc_html_e( 'Built for professionals', 'agtools' ); ?></p>
+			<h1><?php esc_html_e( 'Cut deeper. Work smarter.', 'agtools' ); ?></h1>
+			<p class="hero__lead"><?php esc_html_e( 'Premium diamond tools, equipment and accessories for demanding jobs.', 'agtools' ); ?></p>
+			<div class="button-group"><a class="button" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' ) ); ?>"><?php esc_html_e( 'Shop now', 'agtools' ); ?> <span>→</span></a><a class="hero__secondary" href="#categories"><?php esc_html_e( 'Explore categories', 'agtools' ); ?> <span>↓</span></a></div>
 		</div>
-		<div class="hero__visual" aria-hidden="true"><div class="hero__disc"></div><div class="hero__tool"><span></span><i></i></div><p>AG<br>TOOLS</p></div>
+		<div class="hero__visual"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-angle-grinder.png' ); ?>" alt="<?php esc_attr_e( 'Professional angle grinder with diamond blade', 'agtools' ); ?>" fetchpriority="high"></div>
 	</div>
 </section>
