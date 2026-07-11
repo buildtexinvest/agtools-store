@@ -1,0 +1,2 @@
+/* Premium storefront header. BEM component styles. */
+.ag-header__nav ul{list-style:none;margin:0;padding:0;display:flex;gap:2rem}.ag-header__nav a{display:block;padding:.9rem 0;font:600 .76rem Inter,Arial,sans-serif;text-transform:uppercase;letter-spacing:.035em}.ag-header__nav a:hover{color:#ff6a00}@media(max-width:719px){.ag-header__nav.is-open ul{display:grid;gap:0;padding:1rem}.ag-header__nav.is-open a{padding:.8rem}}

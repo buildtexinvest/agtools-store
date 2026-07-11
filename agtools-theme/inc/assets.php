@@ -27,12 +27,28 @@ function agtools_enqueue_assets() {
 		agtools_asset_version( '/assets/css/theme.css' )
 	);
 
+	wp_enqueue_style(
+		'agtools-header',
+		get_template_directory_uri() . '/assets/css/header.css',
+		array( 'agtools-theme' ),
+		agtools_asset_version( '/assets/css/header.css' )
+	);
+
 	wp_enqueue_script(
 		'agtools-theme',
 		get_template_directory_uri() . '/assets/js/theme.js',
 		array(),
 		agtools_asset_version( '/assets/js/theme.js' ),
 		true
+	);
+
+	wp_localize_script(
+		'agtools-theme',
+		'agtoolsHeader',
+		array(
+			'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+			'nonce'   => wp_create_nonce( 'agtools-search' ),
+		)
 	);
 }
 add_action( 'wp_enqueue_scripts', 'agtools_enqueue_assets' );
