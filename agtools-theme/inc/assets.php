@@ -41,6 +41,13 @@ function agtools_enqueue_assets() {
 		agtools_asset_version( '/assets/css/hero.css' )
 	);
 
+	wp_enqueue_style(
+		'agtools-categories',
+		get_template_directory_uri() . '/assets/css/categories.css',
+		array( 'agtools-theme' ),
+		agtools_asset_version( '/assets/css/categories.css' )
+	);
+
 	wp_enqueue_script(
 		'agtools-theme',
 		get_template_directory_uri() . '/assets/js/theme.js',
