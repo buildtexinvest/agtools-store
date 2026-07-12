@@ -1,0 +1,5 @@
+@use '../tokens' as *;
+
+.ag-hero { background: $black; color: $white; position: relative; }
+.ag-hero__button--primary { background: $orange; color: $white; }
+.ag-hero__button--secondary { border: 1px solid $white; color: $white; }
