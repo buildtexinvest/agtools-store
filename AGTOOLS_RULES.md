@@ -38,6 +38,43 @@ Use Inter everywhere.
 | Body | 400 |
 | Buttons | 600 |
 
+## Image Standard
+
+All AG Tools product and campaign images must follow this standard.
+
+**Background**
+
+- Dark industrial concrete
+
+**Lighting**
+
+- Soft orange rim light
+- Soft white key light
+
+**Style**
+
+- Photorealistic CGI
+
+**Camera**
+
+- 45° angle
+- Slight perspective
+- Large object
+- Clean composition
+
+**Colors**
+
+- Black
+- Dark gray
+- Orange accents
+
+**Never use**
+
+- Text
+- Logos
+- Watermarks
+- People
+
 ## UI Principles
 
 - Minimal

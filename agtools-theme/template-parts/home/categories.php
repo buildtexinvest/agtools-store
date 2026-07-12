@@ -6,12 +6,12 @@
  */
 
 $categories = array(
-	array( 'diamond-blades', __( 'Diamond Blades', 'agtools' ), 'category-diamond-blades.webp' ),
-	array( 'drill-bits', __( 'Diamond Drill Bits', 'agtools' ), 'category-drill-bits.webp' ),
-	array( 'tile-cutters', __( 'Tile Cutters', 'agtools' ), 'category-tile-cutters.webp' ),
-	array( 'grinding', __( 'Grinding', 'agtools' ), 'category-grinding.webp' ),
-	array( 'hand-tools', __( 'Hand Tools', 'agtools' ), 'category-hand-tools.webp' ),
-	array( 'accessories', __( 'Accessories', 'agtools' ), 'category-accessories.webp' ),
+	array( array( 'diamond-blades' ), __( 'Diamond Blades', 'agtools' ), 'category-diamond-blades.webp' ),
+	array( array( 'diamond-core-bits', 'drill-bits', 'diamond-drill-bits' ), __( 'Diamond Core Bits', 'agtools' ), 'category-drill-bits.webp' ),
+	array( array( 'tile-cutters' ), __( 'Tile Cutters', 'agtools' ), 'category-tile-cutters.webp' ),
+	array( array( 'grinding-polishing', 'grinding' ), __( 'Grinding & Polishing', 'agtools' ), 'category-grinding.webp' ),
+	array( array( 'hand-tools' ), __( 'Hand Tools', 'agtools' ), 'category-hand-tools.webp' ),
+	array( array( 'accessories' ), __( 'Accessories', 'agtools' ), 'category-accessories.webp' ),
 );
 
 $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
@@ -24,7 +24,15 @@ $shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 
 		</header>
 		<div class="ag-categories__grid">
 			<?php foreach ( $categories as $category ) :
-				$term    = taxonomy_exists( 'product_cat' ) ? get_term_by( 'slug', $category[0], 'product_cat' ) : false;
+				$term = false;
+				if ( taxonomy_exists( 'product_cat' ) ) {
+					foreach ( $category[0] as $slug ) {
+						$term = get_term_by( 'slug', $slug, 'product_cat' );
+						if ( $term && ! is_wp_error( $term ) ) {
+							break;
+						}
+					}
+				}
 				$url     = $term && ! is_wp_error( $term ) ? get_term_link( $term ) : $shop_url;
 				$count   = $term && ! is_wp_error( $term ) ? (int) $term->count : 0;
 				$counter = sprintf( _n( '%s product', '%s products', $count, 'agtools' ), number_format_i18n( $count ) );
