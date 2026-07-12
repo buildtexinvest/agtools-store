@@ -12,3 +12,4 @@ require_once get_template_directory() . '/inc/assets.php';
 require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/header.php';
 require_once get_template_directory() . '/inc/product-cards.php';
+require_once get_template_directory() . '/inc/product-page.php';

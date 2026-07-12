@@ -1,0 +1,5 @@
+@use '../tokens' as *;
+
+.single-product div.product { display: grid; gap: 2rem; }
+.single-product .summary { background: $white; }
+.ag-pdp__trust { border-block: 1px solid $grey; }

@@ -55,6 +55,15 @@ function agtools_enqueue_assets() {
 		agtools_asset_version( '/assets/css/product-cards.css' )
 	);
 
+	if ( function_exists( 'is_product' ) && is_product() ) {
+		wp_enqueue_style(
+			'agtools-product-page',
+			get_template_directory_uri() . '/assets/css/product-page.css',
+			array( 'agtools-theme', 'agtools-product-cards' ),
+			agtools_asset_version( '/assets/css/product-page.css' )
+		);
+	}
+
 	wp_enqueue_script(
 		'agtools-theme',
 		get_template_directory_uri() . '/assets/js/theme.js',
