@@ -1,0 +1,5 @@
+@use '../tokens' as *;
+
+.ag-product-card__media { background: $grey; }
+.ag-product-card__badge { background: $black; color: $white; }
+.ag-product-card__badge:first-child { background: $orange; }

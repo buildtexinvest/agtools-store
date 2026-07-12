@@ -87,4 +87,31 @@
 			if ( brandTrack ) brandTrack.scrollBy( { left: Number( this.dataset.brandScroll ) * 240, behavior: 'smooth' } );
 		} );
 	} );
+
+	const quickViewDialog = document.querySelector( '[data-ag-quick-view-dialog]' );
+	if ( quickViewDialog && typeof quickViewDialog.showModal === 'function' ) {
+		const quickViewImage = quickViewDialog.querySelector( '.ag-quick-view__image' );
+		const quickViewTitle = quickViewDialog.querySelector( '#ag-quick-view-title' );
+		const quickViewPrice = quickViewDialog.querySelector( '.ag-quick-view__price' );
+		const quickViewLink = quickViewDialog.querySelector( '.ag-quick-view__link' );
+
+		document.querySelectorAll( '[data-ag-quick-view]' ).forEach( function ( button ) {
+			button.addEventListener( 'click', function () {
+				quickViewImage.src = this.dataset.productImage;
+				quickViewImage.alt = this.dataset.productTitle;
+				quickViewTitle.textContent = this.dataset.productTitle;
+				quickViewPrice.textContent = this.dataset.productPrice;
+				quickViewLink.href = this.dataset.productUrl;
+				quickViewDialog.showModal();
+			} );
+		} );
+
+		quickViewDialog.querySelector( '[data-ag-quick-view-close]' ).addEventListener( 'click', function () {
+			quickViewDialog.close();
+		} );
+
+		quickViewDialog.addEventListener( 'click', function ( event ) {
+			if ( event.target === quickViewDialog ) quickViewDialog.close();
+		} );
+	}
 }() );
